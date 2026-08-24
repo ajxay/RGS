@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icon">
+<path id="Vector" d="M23 4H7C6.44772 4 6 4.44772 6 5V26C6 26.5523 6.44772 27 7 27H23C23.5523 27 24 26.5523 24 26V5C24 4.44772 23.5523 4 23 4Z" stroke="#032347" stroke-width="1.575"/>
+<path id="Vector_2" d="M6 10H24" stroke="#032347" stroke-width="1.575"/>
+<path id="Vector_3" d="M9.5 14.5H22.5" stroke="#032347" stroke-width="1.3125" stroke-linecap="round"/>
+<path id="Vector_4" d="M9.5 18H22.5" stroke="#032347" stroke-width="1.3125" stroke-linecap="round"/>
+<path id="Vector_5" d="M9.5 21.5H19" stroke="#032347" stroke-width="1.3125" stroke-linecap="round"/>
+<path id="Vector_6" d="M13 8.1C13.6075 8.1 14.1 7.60751 14.1 7C14.1 6.39249 13.6075 5.9 13 5.9C12.3925 5.9 11.9 6.39249 11.9 7C11.9 7.60751 12.3925 8.1 13 8.1Z" stroke="#032347" stroke-width="1.3125"/>
+<path id="Vector_7" d="M15 5.5L18 8.5" stroke="#032347" stroke-width="1.3125" stroke-linecap="round"/>
+<path id="Vector_8" d="M18 8.1C18.6075 8.1 19.1 7.60751 19.1 7C19.1 6.39249 18.6075 5.9 18 5.9C17.3925 5.9 16.9 6.39249 16.9 7C16.9 7.60751 17.3925 8.1 18 8.1Z" stroke="#032347" stroke-width="1.3125"/>
+</g>
+</svg>

@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Design tokens — mirrored 1:1 from the Figma variable collection
+   (RGS Legal / Homepage, node 54:7485)
+   ------------------------------------------------------------------ */
+@theme {
+  --color-primary: #032347;
+  --color-secondary: #344e6c;
+  --color-accent: #b68a4c;
+  --color-bg-1: #fafaf8;
+  --color-muted: #6a7282;
+  --color-hairline: #f3f4f6;
+  --color-cta-plate: #f1e7e0;
+
+  /* Warm neutrals used only by the About page advisory section (143:258) */
+  --color-ink: #2a2118;
+  --color-ink-soft: #4a3f35;
+  --color-check-bg: #f3ede4;
+
+  /* Warm set the Contact page uses for its channel strip and office cards */
+  --color-gold: #c9a84c;
+  --color-warm-ink: #2a2016;
+  --color-warm-muted: #7a6e60;
+  --color-warm-panel: #f9f6f1;
+
+  --font-title: var(--font-libre-baskerville), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-nav: 0 1px 12px 0 rgb(0 0 0 / 0.05);
+  --shadow-portrait: 0 0 4px 0 rgb(0 0 0 / 0.15);
+}
+
+/* Figma's Radius/Spacing scales are recorded for reference only — they are
+   deliberately kept out of @theme, where the `--radius-*` and `--spacing-*`
+   namespaces would rewrite Tailwind's own `rounded-*` / `p-*` scales. */
+:root {
+  --fig-radius-1: 4px;
+  --fig-radius-2: 8px;
+  --fig-radius-4: 16px;
+  --fig-spacing-2: 8px;
+  --fig-spacing-3: 16px;
+  --fig-spacing-5: 40px;
+  --fig-spacing-6: 100px;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #ffffff;
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Figma labels the title face "Medium"/"SemiBold", but both render as the
+   regular Libre Baskerville cut — the only upright weight the family ships. */
+.font-title {
+  font-family: var(--font-title);
+  font-weight: 400;
+}
+
+/* Horizontal card rail (Insights) — scrolls without a visible scrollbar,
+   matching the clipped 4th card in the Figma frame. */
+.rail {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+/* Monochrome social glyphs are exported as alpha PNGs and re-tinted so the
+   same asset serves the navy (partners) and off-white (footer) placements. */
+.mask-icon {
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
