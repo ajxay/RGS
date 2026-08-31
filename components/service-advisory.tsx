@@ -1,33 +1,41 @@
 import Image from "next/image";
-import { advisoryPoints } from "@/lib/site-data";
+import type { ServiceDetailContent } from "@/lib/site-data";
 
 /**
- * Figma 54:9067 + 54:9097 — the About page's advisory block reworked for this
- * layout: a 48px-padded 619px column at 16px body copy beside the same photo.
+ * Figma 54:9069… (Indirect) and 202:233… (Direct) — the copy column sits flush
+ * on the 80px page margin with no padded container, beside the library photo.
  */
-export function ServiceAdvisory() {
+export function ServiceAdvisory({
+  detail,
+  className = "pb-[96px]",
+  headingWidth = "max-w-[523px]",
+  bodyWidth = "max-w-[619px]",
+}: {
+  detail: ServiceDetailContent;
+  className?: string;
+  headingWidth?: string;
+  bodyWidth?: string;
+}) {
   return (
-    <section className="pb-[96px]">
+    <section className={className}>
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-20">
         <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-stretch">
-          <div className="flex flex-col justify-center bg-white sm:px-12 lg:h-[434px] lg:w-[619px] lg:shrink-0">
-            <h2 className="font-title max-w-[523px] pb-5 text-[28px] leading-[36px] text-ink lg:text-[32px] lg:leading-10">
-              Strategic Indirect Tax Advisory Built for Business
+          <div className="flex flex-col justify-center lg:h-[434px] lg:w-[619px] lg:shrink-0">
+            <h2
+              className={`font-title ${headingWidth} pb-5 text-[28px] leading-[36px] text-ink lg:text-[32px] lg:leading-10`}
+            >
+              {detail.advisory.heading}
             </h2>
 
-            <p className="max-w-[523px] pb-8 text-[16px] leading-6 text-ink-soft">
-              Our team combines deep technical expertise with commercial insight
-              to help businesses confidently manage indirect tax obligations.
-              From advisory and compliance to dispute resolution and cross-border
-              trade matters, we deliver practical legal solutions that protect
-              your business while enabling sustainable growth.
+            <p className={`${bodyWidth} pb-5 text-[16px] leading-6 text-ink-soft`}>
+              {detail.advisory.body}
             </p>
 
-            <ul className="max-w-[523px]">
-              {advisoryPoints.map((point, index) => (
+            <ul>
+              {detail.advisory.points.map((point, index) => (
                 <li
                   key={point}
-                  className={`flex items-start gap-3 ${index > 0 ? "pt-4" : ""}`}
+                  className={`flex items-start gap-2 ${index > 0 ? "pt-4" : ""}`}
                 >
                   <span className="flex shrink-0 items-start pt-0.5">
                     <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-check-bg">

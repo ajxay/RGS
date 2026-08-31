@@ -9,7 +9,9 @@ Next.js + Tailwind CSS implementation of the RGS Legal site from Figma
 | `/about` | [`54:8048` About Us](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=54-8048) |
 | `/partners` | [`116:3573` Partners](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=116-3573) |
 | `/services` | [`80:770` Our Services](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=80-770) |
-| `/services/indirect-taxation` | [`54:8875` Service Detail](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=54-8875) |
+| `/services/indirect-taxation` | [`54:8875` Indirect Taxation](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=54-8875) |
+| `/services/direct-taxation` | [`202:157` Direct Taxation](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=202-157) |
+| `/services/securities-law` | [`205:509` Securities Law](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=205-509) |
 | `/contact` | [`54:8434` Contact Us](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=54-8434) |
 
 ## Running it
@@ -59,7 +61,9 @@ app/
   about/page.tsx      About Us composition
   partners/page.tsx   Partners composition
   services/page.tsx   Our Services composition
-  services/indirect-taxation/page.tsx  Service Detail composition
+  services/indirect-taxation/page.tsx  Indirect Taxation composition
+  services/direct-taxation/page.tsx    Direct Taxation composition
+  services/securities-law/page.tsx     Securities Law composition
   contact/page.tsx    Contact Us composition
   globals.css         tokens, base styles, rail + mask helpers
 components/
@@ -78,7 +82,7 @@ components/
   service-detail-hero.tsx 85:1821 + 54:8901
   service-overview.tsx 54:8961 + 54:8968
   service-list.tsx    54:9065 + 82:1467  3x3 offering grid
-  service-advisory.tsx 54:9067 + 54:9097
+  service-advisory.tsx 54:9069 + 202:233                shared
   contact-hero.tsx    107:3559 + 54:8460
   contact-channels.tsx 54:8570/8582/8595
   contact-offices.tsx 54:8802 + 54:8608/8705
@@ -92,6 +96,13 @@ components/
 lib/site-data.ts      all page copy and per-card asset wiring
 public/               images and icons exported from the Figma file
 ```
+
+The four `service-*.tsx` components serve all three practice-detail pages: they take
+their copy, icons and hero as a single `ServiceDetailContent` object from
+`site-data`, plus a few layout props for the places the two artboards differ
+(Indirect has five value points and square cards; Direct and Securities have
+four and round them to 14px; Securities also narrows its hero title column to
+476px so it wraps to four lines).
 
 `practice-areas.tsx` serves both the homepage and the whole of `/services`,
 where the same grid is the entire page body — it takes props for its spacing,

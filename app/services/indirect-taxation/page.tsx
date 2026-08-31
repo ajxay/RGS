@@ -7,6 +7,7 @@ import { ServiceList } from "@/components/service-list";
 import { ServiceOverview } from "@/components/service-overview";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { indirectTaxation } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Indirect Taxation — GST, Customs & Trade | RGS Legal",
@@ -19,10 +20,10 @@ export default function IndirectTaxationPage() {
     <>
       <SiteHeader />
       <main>
-        <ServiceDetailHero />
-        <ServiceOverview />
-        <ServiceList />
-        <ServiceAdvisory />
+        <ServiceDetailHero detail={indirectTaxation} />
+        <ServiceOverview detail={indirectTaxation} />
+        <ServiceList detail={indirectTaxation} />
+        <ServiceAdvisory detail={indirectTaxation} />
         <CtaBanner />
       </main>
       <Newsletter />

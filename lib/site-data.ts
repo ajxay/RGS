@@ -3,9 +3,8 @@
 // Root-relative so the bar resolves the same way from every route.
 export const navLinks = [
   { label: "Practice Areas", href: "/services", hasMenu: true },
-  { label: "Expertise", href: "/#expertise", hasMenu: true },
-  { label: "People", href: "/partners", hasMenu: false },
   { label: "About Us", href: "/about", hasMenu: false },
+  { label: "Blogs & Articles", href: "/#insights", hasMenu: false },
   { label: "Contact Us", href: "/contact", hasMenu: false },
 ];
 
@@ -48,13 +47,13 @@ export const practiceAreas = [
     title: "Direct Taxation",
     description: "Corporate tax, transfer pricing, and income tax compliance & planning.",
     icon: "/icons/practice/direct-taxation.svg",
-    href: "/services",
+    href: "/services/direct-taxation",
   },
   {
     title: "Securities Law",
     description: "SEBI regulations, capital markets, listings, and fund structuring.",
     icon: "/icons/practice/securities-law.svg",
-    href: "/services",
+    href: "/services/securities-law",
   },
   {
     title: "Insolvency Law",
@@ -220,21 +219,33 @@ export const coreValues = [
     title: "Integrity",
     description:
       "We hold ourselves to the highest ethical standards in all client relationships and proceedings.",
+    icon: "/icons/values/integrity.png",
+    width: 20,
+    height: 24,
   },
   {
     title: "Excellence",
     description:
       "We pursue the highest level of legal service, driven by precision and deep expertise.",
+    icon: "/icons/values/excellence.png",
+    width: 20,
+    height: 24,
   },
   {
     title: "Collaboration",
     description:
       "We believe the best outcomes emerge from partnerships built on trust and open dialogue.",
+    icon: "/icons/values/collaboration.png",
+    width: 26,
+    height: 24,
   },
   {
-    title: "Integrity",
+    title: "Innovation",
     description:
-      "We hold ourselves to the highest ethical standards in all client relationships and proceedings.",
+      "We embrace new & forward-thinking solutions to drive progress.",
+    icon: "/icons/values/innovation.png",
+    width: 25,
+    height: 24,
   },
 ];
 
@@ -251,13 +262,47 @@ export const partnerProfiles = partners.slice(0, 3).map((partner) => ({
 }));
 
 /* ---------------------------------------------------------------- */
-/* Service detail — Figma frame 54:8875 (Indirect Taxation)          */
+/* Service detail pages — Figma 54:8875 and 202:157                  */
 /* ---------------------------------------------------------------- */
 
-export const serviceDetail = {
+export type ServiceOffering = {
+  title: string;
+  description: string;
+  icon: string;
+};
+
+export type ServiceDetailContent = {
+  eyebrow: string;
+  titleLead: string;
+  titleAccent: string;
+  hero: {
+    src: string;
+    width: number;
+    height: number;
+    alt: string;
+    className: string;
+    /** Defaults to the 569px column both taxation pages use. */
+    titleMaxWidth?: string;
+  };
+  /** Optional scrim drawn over the hero photo. */
+  heroOverlay?: string;
+  overview: [string, string];
+  valuePoints: string[];
+  offerings: ServiceOffering[];
+  advisory: { heading: string; body: string; points: string[] };
+};
+
+export const indirectTaxation: ServiceDetailContent = {
   eyebrow: "AREAS of Practice",
   titleLead: "Indirect Taxation",
   titleAccent: "GST, Customs & Trade",
+  hero: {
+    src: "/images/service-hero-books.png",
+    width: 1672,
+    height: 941,
+    alt: "Law volumes titled GST, Customs, Excise and Service Tax beside a globe and scales",
+    className: "absolute top-[-29.81%] left-0 h-[150.08%] w-full max-w-none object-cover",
+  },
   overview: [
     "Our Indirect Taxation practice provides comprehensive legal and strategic support across the full spectrum of indirect tax laws in India. We advise domestic and international businesses on GST, Customs, Central Excise, Service Tax, VAT, Foreign Trade Policy, Anti-Dumping, Safeguard Duty, and Special Economic Zone (SEZ) regulations",
     "With a commercially driven approach, we assist clients in structuring transactions, ensuring regulatory compliance, managing audits and investigations, handling disputes, and representing them before tax authorities and appellate forums. Our objective is to minimize tax risks while enabling efficient and compliant business operations.",
@@ -269,64 +314,255 @@ export const serviceDetail = {
     "Effective representation before tax authorities and tribunals",
     "Commercially focused solutions with timely execution",
   ],
+  offerings: [
+    {
+      title: "GST Law",
+      description:
+        "Advisory, compliance, litigation and appellate services in all aspects of Goods and Services Tax.",
+      icon: "/icons/services/gst-law.svg",
+    },
+    {
+      title: "Service Tax",
+      description:
+        "End-to-end legal services on service tax including advisory, compliance, refunds, and disputes resolution.",
+      icon: "/icons/services/service-tax.svg",
+    },
+    {
+      title: "Excise",
+      description:
+        "Comprehensive excise duty matters including classification, valuation, exemptions and litigation.",
+      icon: "/icons/services/excise.svg",
+    },
+    {
+      title: "VAT",
+      description:
+        "Support for VAT registration, compliance, returns, assessments and appeals across all states.",
+      icon: "/icons/services/vat.svg",
+    },
+    {
+      title: "Customs",
+      description:
+        "Assistance on customs compliance, import-export regulations, assessments and duty matters.",
+      icon: "/icons/services/customs.svg",
+    },
+    {
+      title: "Foreign Trade Policy",
+      description:
+        "Advisory on import-export policy, schemes, licensing, approvals and regulatory compliance.",
+      icon: "/icons/services/foreign-trade-policy.svg",
+    },
+    {
+      title: "Anti Dumping",
+      description:
+        "Representation and advisory in anti-dumping investigations and import-related trade remedies.",
+      icon: "/icons/services/anti-dumping.svg",
+    },
+    {
+      title: "Safeguard Duty",
+      description:
+        "Guidance and representation in safeguard investigations to protect industries from import surges.",
+      icon: "/icons/services/safeguard-duty.svg",
+    },
+    {
+      title: "Special Economic Zones",
+      description:
+        "Advisory on SEZ policy, compliance, approvals and dispute resolution under the SEZ Act.",
+      icon: "/icons/services/special-economic-zones.svg",
+    },
+  ],
+  advisory: {
+    heading: "Strategic Indirect Tax Advisory Built for Business",
+    body: "Our team combines deep technical expertise with commercial insight to help businesses confidently manage indirect tax obligations. From advisory and compliance to dispute resolution and cross-border trade matters, we deliver practical legal solutions that protect your business while enabling sustainable growth.",
+    points: [
+      "Comprehensive expertise across GST, Customs, Excise, VAT, and Trade Laws",
+      "Risk-focused compliance and regulatory advisory",
+      "Strong representation in audits, investigations, and tax disputes",
+      "Practical, business-oriented solutions with timely execution",
+    ],
+  },
 };
 
-export const serviceOfferings = [
-  {
-    title: "GST Law",
-    description:
-      "Advisory, compliance, litigation and appellate services in all aspects of Goods and Services Tax.",
-    icon: "/icons/services/gst-law.svg",
+export const directTaxation: ServiceDetailContent = {
+  eyebrow: "AREAS of Practice",
+  titleLead: "Direct Taxation",
+  titleAccent: "Income Tax, Corporate & International Tax Advisory",
+  hero: {
+    src: "/images/direct-tax-hero.png",
+    width: 2508,
+    height: 941,
+    alt: "A Direct Taxation volume on a desk beside tax law books, a calculator and reading glasses",
+    className: "absolute top-[-0.01%] left-[0.04%] h-[100.01%] w-[99.96%] max-w-none object-cover",
   },
-  {
-    title: "Service Tax",
-    description:
-      "End-to-end legal services on service tax including advisory, compliance, refunds, and disputes resolution.",
-    icon: "/icons/services/service-tax.svg",
+  heroOverlay:
+    "linear-gradient(to left, rgba(36,33,33,0) 24.063%, #282626 100%)",
+  overview: [
+    "Our Direct Taxation practice provides comprehensive advisory, compliance and litigation support across the spectrum of Income Tax law and related legislations, including the Black Money Act.",
+    "We assist businesses, individuals and international entities in navigating complex tax obligations, structuring transactions efficiently and ensuring compliance with evolving tax regulations. Our practice also represents clients before departmental authorities, the Income Tax Appellate Tribunal (ITAT), High Courts and the Supreme Court in matters relating to Direct Taxes",
+  ],
+  valuePoints: [
+    "Strategic tax planning tailored to your financial and business objectives",
+    "International transaction structuring with cross-border tax considerations",
+    "Practical guidance on complex corporate and individual tax matters",
+    "Strong representation before tax authorities and appellate forums",
+  ],
+  offerings: [
+    {
+      title: "International Taxation",
+      description:
+        "Strategic structuring of cross-border transactions to manage tax liabilities, treaty obligations and regulatory compliance.",
+      icon: "/icons/direct-tax/international-taxation.svg",
+    },
+    {
+      title: "Corporate Taxation",
+      description:
+        "Advisory and strategic support to help businesses understand tax implications and maintain efficient compliance systems.",
+      icon: "/icons/direct-tax/corporate-taxation.svg",
+    },
+    {
+      title: "Individual Taxation",
+      description:
+        "Comprehensive consultancy and litigation support for individuals in matters concerning Income Tax liabilities and compliance.",
+      icon: "/icons/direct-tax/individual-taxation.svg",
+    },
+    {
+      title: "Income Tax Advisory",
+      description:
+        "Practical advice on tax laws, transactions and evolving regulations to support informed financial and business decisions.",
+      icon: "/icons/direct-tax/income-tax-advisory.svg",
+    },
+    {
+      title: "Tax Litigation & Representation",
+      description:
+        "Representation before departmental authorities, the Income Tax Appellate Tribunal, High Courts and the Supreme Court.",
+      icon: "/icons/direct-tax/tax-litigation.svg",
+    },
+    {
+      title: "Black Money Act",
+      description:
+        "Advisory and representation concerning matters arising under the Black Money (Undisclosed Foreign Income and Assets) Act and related regulations.",
+      icon: "/icons/direct-tax/black-money-act.svg",
+    },
+    {
+      title: "Tax Compliance",
+      description:
+        "Structured guidance to help businesses and individuals meet their Direct Tax compliance and reporting obligations.",
+      icon: "/icons/direct-tax/tax-compliance.svg",
+    },
+    {
+      title: "Tax Assessments & Appeals",
+      description:
+        "Support throughout assessments, disputes and appellate proceedings involving Direct Tax matters.",
+      icon: "/icons/direct-tax/tax-assessments.svg",
+    },
+    {
+      title: "Cross-Border Tax Advisory",
+      description:
+        "Focused guidance on international transactions, Double Taxation Avoidance Agreements and related tax implications.",
+      icon: "/icons/direct-tax/cross-border-advisory.svg",
+    },
+  ],
+  advisory: {
+    heading: "Strategic Direct Tax Advisory for Businesses & Individuals",
+    body: "Our team combines deep technical expertise with a practical understanding of business and financial realities. From corporate transactions and international taxation to individual tax matters and complex litigation, we provide solutions designed around each client's specific requirements.",
+    points: [
+      "Comprehensive expertise across Corporate, International & Individual Taxation",
+      "Strategic guidance on complex tax structures and transactions",
+      "Strong representation in assessments, appeals and tax litigation",
+      "Practical, client-focused solutions with timely execution",
+    ],
   },
-  {
-    title: "Excise",
-    description:
-      "Comprehensive excise duty matters including classification, valuation, exemptions and litigation.",
-    icon: "/icons/services/excise.svg",
+};
+
+export const securitiesLaw: ServiceDetailContent = {
+  eyebrow: "AREAS of Practice",
+  titleLead: "Securities Law",
+  titleAccent: "SEBI Compliance, Advisory & Securities Litigation",
+  hero: {
+    src: "/images/securities-hero.png",
+    width: 2730,
+    height: 1024,
+    alt: "Scales of justice and a gavel on a Securities Law volume beside a laptop and market charts",
+    className: "absolute top-0 left-[0.02%] h-full w-[99.98%] max-w-none object-cover",
+    titleMaxWidth: "max-w-[476px]",
   },
-  {
-    title: "VAT",
-    description:
-      "Support for VAT registration, compliance, returns, assessments and appeals across all states.",
-    icon: "/icons/services/vat.svg",
+  overview: [
+    "Our Securities Law practice provides comprehensive advisory, compliance and litigation support in matters governed by the SEBI Act and the rules and regulations framed thereunder.",
+    "We regularly assist individuals and entities in navigating regulatory requirements, responding to enforcement actions and addressing complex compliance issues. Our team advises clients on matters involving SEBI proceedings, show cause notices, penalties and other regulatory restrictions, while also representing them before adjudicating authorities, the Securities Appellate Tribunal (SAT) and the Supreme Court.",
+  ],
+  valuePoints: [
+    "Practical guidance on SEBI laws, regulations and compliance requirements",
+    "Strategic support in responding to show cause notices and regulatory proceedings",
+    "Strong representation before SEBI, adjudicating authorities and appellate forums",
+    "Focused legal strategies for managing regulatory risks, penalties and restrictions",
+  ],
+  offerings: [
+    {
+      title: "SEBI Compliance",
+      description:
+        "Advisory and legal support to help individuals and entities understand and comply with applicable SEBI laws, rules and regulations.",
+      icon: "/icons/securities/sebi-compliance.svg",
+    },
+    {
+      title: "Regulatory Advisory",
+      description:
+        "Strategic guidance on securities law matters, regulatory obligations and compliance-related issues.",
+      icon: "/icons/securities/regulatory-advisory.svg",
+    },
+    {
+      title: "Show Cause Notices",
+      description:
+        "Assistance in analysing, drafting and filing responses to show cause notices issued by SEBI and other regulatory authorities.",
+      icon: "/icons/securities/show-cause-notices.svg",
+    },
+    {
+      title: "SEBI Adjudication",
+      description:
+        "Representation and legal support in proceedings before Whole Time Members of SEBI and other adjudicating officers.",
+      icon: "/icons/securities/sebi-adjudication.svg",
+    },
+    {
+      title: "Securities Litigation",
+      description:
+        "Strategic representation in disputes, enforcement actions and proceedings arising under securities laws and regulations.",
+      icon: "/icons/securities/securities-litigation.svg",
+    },
+    {
+      title: "SAT Appeals",
+      description:
+        "Advisory and representation in challenging adverse orders before the Securities Appellate Tribunal.",
+      icon: "/icons/securities/sat-appeals.svg",
+    },
+    {
+      title: "Supreme Court Representation",
+      description:
+        "Legal support and representation in securities law matters before the Supreme Court of India.",
+      icon: "/icons/securities/supreme-court.svg",
+    },
+    {
+      title: "Market Conduct Regulations",
+      description:
+        "Advisory on matters arising under regulations governing fraudulent and unfair trade practices and other market conduct requirements.",
+      icon: "/icons/securities/market-conduct.svg",
+    },
+    {
+      title: "Regulatory Investigations",
+      description:
+        "Focused legal support for individuals and entities facing SEBI inquiries, investigations, enforcement actions and regulatory proceedings.",
+      icon: "/icons/securities/regulatory-investigations.svg",
+    },
+  ],
+  advisory: {
+    heading: "Strategic Securities Law Advisory for a Complex Regulatory Environment",
+    /* The artboard still carries the Direct Taxation paragraph here verbatim. */
+    body: "Our team combines deep technical expertise with a practical understanding of business and financial realities. From corporate transactions and international taxation to individual tax matters and complex litigation, we provide solutions designed around each client's specific requirements.",
+    points: [
+      "Comprehensive understanding of SEBI laws and regulatory frameworks",
+      "Strategic support for compliance, investigations and enforcement proceedings",
+      "Strong representation before SEBI, SAT and the Supreme Court",
+      "Practical, timely and commercially focused legal solutions",
+    ],
   },
-  {
-    title: "Customs",
-    description:
-      "Assistance on customs compliance, import-export regulations, assessments and duty matters.",
-    icon: "/icons/services/customs.svg",
-  },
-  {
-    title: "Foreign Trade Policy",
-    description:
-      "Advisory on import-export policy, schemes, licensing, approvals and regulatory compliance.",
-    icon: "/icons/services/foreign-trade-policy.svg",
-  },
-  {
-    title: "Anti Dumping",
-    description:
-      "Representation and advisory in anti-dumping investigations and import-related trade remedies.",
-    icon: "/icons/services/anti-dumping.svg",
-  },
-  {
-    title: "Safeguard Duty",
-    description:
-      "Guidance and representation in safeguard investigations to protect industries from import surges.",
-    icon: "/icons/services/safeguard-duty.svg",
-  },
-  {
-    title: "Special Economic Zones",
-    description:
-      "Advisory on SEZ policy, compliance, approvals and dispute resolution under the SEZ Act.",
-    icon: "/icons/services/special-economic-zones.svg",
-  },
-];
+};
 
 /* ---------------------------------------------------------------- */
 /* Contact Us page — Figma frame 54:8434                             */

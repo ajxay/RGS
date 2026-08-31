@@ -1,9 +1,9 @@
-import Image from "next/image";
 import { coreValues } from "@/lib/site-data";
 
 /**
  * Figma 54:8091 + 143:336 — four value cards on a 1220px row that is inset a
- * further 30px from the page margin the rest of the page uses.
+ * further 30px from the page margin the rest of the page uses. Each icon is an
+ * alpha-mask bitmap tinted bg-1 on the navy disc, and its box differs per card.
  */
 export function CoreValues() {
   return (
@@ -16,18 +16,21 @@ export function CoreValues() {
 
       <div className="mx-auto mt-10 w-full max-w-[1440px] px-5 sm:px-8 lg:px-[110px]">
         <ul className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {coreValues.map((value, index) => (
+          {coreValues.map((value) => (
             <li
-              key={`${value.title}-${index}`}
+              key={value.title}
               className="flex flex-col gap-4 rounded-[16px] bg-bg-1 p-7"
             >
-              <span className="flex size-10 items-center justify-center rounded-full bg-primary">
-                <Image
-                  src="/icons/values/scales.svg"
-                  alt=""
-                  width={16}
-                  height={16}
-                  className="size-4"
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary">
+                <span
+                  aria-hidden="true"
+                  className="mask-icon block bg-bg-1"
+                  style={{
+                    width: value.width,
+                    height: value.height,
+                    maskImage: `url(${value.icon})`,
+                    WebkitMaskImage: `url(${value.icon})`,
+                  }}
                 />
               </span>
 

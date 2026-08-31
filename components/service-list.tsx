@@ -1,46 +1,58 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRightMedium } from "@/components/icons";
-import { serviceOfferings } from "@/lib/site-data";
+import type { ServiceDetailContent } from "@/lib/site-data";
 
 /**
- * Figma 54:9065 + 82:1467 — a 3x3 grid of 394px cards on a 1262px row, again
- * centred inside the page column rather than flush with the 80px margin.
+ * Figma 54:9065 + 209:356… (Indirect) and 202:229 + 202:355 (Direct) — a 3x3
+ * grid of 394px cards. Indirect draws them square-cornered with the content
+ * centred; Direct rounds them to 14px and aligns the content to the top.
  */
-export function ServiceList() {
+export function ServiceList({
+  detail,
+  className = "pb-[82px]",
+  cardClassName = "justify-center lg:h-[248px]",
+}: {
+  detail: ServiceDetailContent;
+  className?: string;
+  cardClassName?: string;
+}) {
   return (
-    <section className="pb-[100px]">
+    <section className={className}>
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-20">
         <h2 className="font-title text-center text-[28px] leading-[36px] text-primary lg:text-[32px] lg:leading-10">
           Our Services
         </h2>
 
         <ul className="mx-auto mt-12 grid max-w-[1262px] grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {serviceOfferings.map((service) => (
+          {detail.offerings.map((service) => (
             <li
               key={service.title}
-              className="flex flex-col rounded-[14px] bg-bg-1 p-6"
+              className={`flex flex-col gap-5 bg-bg-1 p-6 ${cardClassName}`}
             >
-              <span className="flex size-10 items-center justify-center rounded-[10px] bg-white">
-                <Image
-                  src={service.icon}
-                  alt=""
-                  width={20}
-                  height={20}
-                  className="size-5"
-                />
-              </span>
+              <div className="flex flex-col gap-4">
+                <span className="flex size-10 items-center justify-center rounded-[10px] bg-white">
+                  <Image
+                    src={service.icon}
+                    alt=""
+                    width={20}
+                    height={20}
+                    className="size-5"
+                  />
+                </span>
 
-              <h3 className="font-title pt-4 text-[20px] leading-7 font-bold text-primary">
-                {service.title}
-              </h3>
-
-              <p className="pt-2 pb-4 text-[14px] leading-[22px] text-secondary">
-                {service.description}
-              </p>
+                <div className="flex flex-col gap-2">
+                  <h3 className="font-title text-[20px] leading-7 font-bold text-primary">
+                    {service.title}
+                  </h3>
+                  <p className="text-[14px] leading-[22px] text-secondary">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
 
               <Link
-                href="/#contact"
+                href="/contact"
                 className="flex h-5 w-fit items-center gap-1 text-[14px] leading-5 font-medium text-primary transition-opacity hover:opacity-70"
               >
                 Learn More

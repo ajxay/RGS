@@ -52,7 +52,7 @@ export function AboutHero() {
                 href="/#contact"
                 className="flex items-center gap-2 rounded-[10px] bg-accent px-7 py-[14px] text-center text-[14px] leading-5 font-semibold text-bg-1 transition-opacity hover:opacity-90"
               >
-                Free Consultation
+                Consult Now
                 <ArrowRight />
               </Link>
               <Link
