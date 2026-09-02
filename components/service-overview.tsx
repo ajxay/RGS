@@ -10,15 +10,21 @@ import type { ServiceDetailContent } from "@/lib/site-data";
 export function ServiceOverview({
   detail,
   panelPadding = "py-[49px]",
+  panelHeight = "",
 }: {
   detail: ServiceDetailContent;
   panelPadding?: string;
+  /** Three of the four frames pin the panel to 296px and let the padding
+      absorb however many value points the page carries. */
+  panelHeight?: string;
 }) {
   return (
     <section className="py-[79px]">
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-20">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-0 lg:pl-[21px]">
-          <div className="lg:w-[595px] lg:shrink-0">
+          {/* All five frames fix this column at 254px and top-align the copy, so
+              pages with shorter paragraphs keep the same optical centre. */}
+          <div className="lg:h-[254px] lg:w-[595px] lg:shrink-0">
             <h2 className="font-title text-[28px] leading-[36px] text-primary lg:text-[32px] lg:leading-10">
               Overview
             </h2>
@@ -30,7 +36,9 @@ export function ServiceOverview({
             </p>
           </div>
 
-          <div className={`bg-bg-1 px-8 ${panelPadding} lg:w-[595px] lg:shrink-0`}>
+          <div
+            className={`bg-bg-1 px-8 ${panelPadding} ${panelHeight} lg:w-[595px] lg:shrink-0`}
+          >
             <h3 className="font-title text-[20px] leading-7 font-bold text-primary">
               How We Add Value
             </h3>

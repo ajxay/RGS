@@ -12,6 +12,10 @@ Next.js + Tailwind CSS implementation of the RGS Legal site from Figma
 | `/services/indirect-taxation` | [`54:8875` Indirect Taxation](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=54-8875) |
 | `/services/direct-taxation` | [`202:157` Direct Taxation](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=202-157) |
 | `/services/securities-law` | [`205:509` Securities Law](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=205-509) |
+| `/services/insolvency-law` | [`209:23` Insolvency Law](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=209-23) |
+| `/services/commercial-corporate` | [`213:384` Commercial & Corporate Laws](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=213-384) |
+| `/services/drafting-contracts` | [`213:702` Drafting & Negotiating Contracts](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=213-702) |
+| `/services/dispute-resolution` | [`213:1020` Alternative Dispute Resolution](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=213-1020) |
 | `/contact` | [`54:8434` Contact Us](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=54-8434) |
 
 ## Running it
@@ -64,6 +68,10 @@ app/
   services/indirect-taxation/page.tsx  Indirect Taxation composition
   services/direct-taxation/page.tsx    Direct Taxation composition
   services/securities-law/page.tsx     Securities Law composition
+  services/insolvency-law/page.tsx     Insolvency Law composition
+  services/commercial-corporate/page.tsx  Commercial & Corporate composition
+  services/drafting-contracts/page.tsx    Drafting & Negotiating composition
+  services/dispute-resolution/page.tsx    Alternative Dispute Resolution composition
   contact/page.tsx    Contact Us composition
   globals.css         tokens, base styles, rail + mask helpers
 components/
@@ -97,12 +105,16 @@ lib/site-data.ts      all page copy and per-card asset wiring
 public/               images and icons exported from the Figma file
 ```
 
-The four `service-*.tsx` components serve all three practice-detail pages: they take
+The four `service-*.tsx` components serve all seven practice-detail pages: they take
 their copy, icons and hero as a single `ServiceDetailContent` object from
 `site-data`, plus a few layout props for the places the two artboards differ
-(Indirect has five value points and square cards; Direct and Securities have
-four and round them to 14px; Securities also narrows its hero title column to
-476px so it wraps to four lines).
+(Indirect has five value points and square cards; the other three have four and
+round them to 14px; Securities and Insolvency narrow the hero title column to
+476px so it wraps to four lines). Six of the seven frames pin the value panel to a fixed 296px and let its padding
+absorb however many points the page carries, so `panelHeight` is scoped to `lg:`
+— below that the panel grows with its content instead of clipping. The Overview
+column is fixed at 254px in every frame for the same reason, so that pages with
+shorter paragraphs keep the same optical centre against the panel.
 
 `practice-areas.tsx` serves both the homepage and the whole of `/services`,
 where the same grid is the entire page body — it takes props for its spacing,

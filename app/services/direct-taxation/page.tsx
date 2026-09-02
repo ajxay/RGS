@@ -23,7 +23,11 @@ export default function DirectTaxationPage() {
         <ServiceDetailHero detail={directTaxation} />
         {/* Four value points instead of five, so the panel carries more padding
             to keep its 296px height; the cards are rounded and top-aligned. */}
-        <ServiceOverview detail={directTaxation} panelPadding="py-[65px]" />
+        <ServiceOverview
+          detail={directTaxation}
+          panelPadding="pt-8"
+          panelHeight="lg:h-[296px]"
+        />
         <ServiceList
           detail={directTaxation}
           className="pb-[110px]"

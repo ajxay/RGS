@@ -59,25 +59,25 @@ export const practiceAreas = [
     title: "Insolvency Law",
     description: "IBC proceedings, resolution plans, and creditor rights representation.",
     icon: "/icons/practice/insolvency-law.svg",
-    href: "/services",
+    href: "/services/insolvency-law",
   },
   {
     title: "Commercial & Corporate Laws",
     description: "Entity structuring, M&A, joint ventures, and governance counsel.",
     icon: "/icons/practice/commercial-corporate.svg",
-    href: "/services",
+    href: "/services/commercial-corporate",
   },
   {
     title: "Drafting & Negotiating Contracts",
     description: "Bespoke agreements, review, and end-to-end negotiation support.",
     icon: "/icons/practice/drafting-contracts.svg",
-    href: "/services",
+    href: "/services/drafting-contracts",
   },
   {
     title: "Alternative Dispute Resolution",
     description: "Arbitration, mediation, and conciliation in domestic and international forums.",
     icon: "/icons/practice/alternative-dispute.svg",
-    href: "/services",
+    href: "/services/dispute-resolution",
   },
   {
     title: "End to End Litigation Support",
@@ -560,6 +560,370 @@ export const securitiesLaw: ServiceDetailContent = {
       "Strategic support for compliance, investigations and enforcement proceedings",
       "Strong representation before SEBI, SAT and the Supreme Court",
       "Practical, timely and commercially focused legal solutions",
+    ],
+  },
+};
+
+export const insolvencyLaw: ServiceDetailContent = {
+  eyebrow: "AREAS of Practice",
+  titleLead: "Insolvency Law",
+  titleAccent: "Restructuring, Insolvency & Recovery Solutions",
+  hero: {
+    src: "/images/insolvency-hero.png",
+    width: 2750,
+    height: 1025,
+    alt: "An Insolvency Law volume, gavel and scales on a desk beside an insolvency petition",
+    className: "absolute top-0 left-[0.03%] h-full w-[99.98%] max-w-none object-cover",
+    titleMaxWidth: "max-w-[476px]",
+  },
+  overview: [
+    "Our Insolvency Law practice provides strategic advisory, restructuring and legal support to creditors, shareholders, lenders, investors and businesses navigating financial distress and insolvency-related challenges.",
+    "We believe that early, practical and cautionary advice can play a critical role in protecting interests and maximising outcomes. Our team advises clients across the restructuring, insolvency, liquidation and recovery process, including matters arising under the Insolvency and Bankruptcy Code, 2016, the Companies Act, 2013 and other applicable legal and regulatory frameworks.",
+  ],
+  valuePoints: [
+    "Early strategic advice to identify risks and protect stakeholder interests",
+    "Practical support throughout restructuring, insolvency and liquidation processes",
+    "Focused legal strategies for debt recovery and enforcement of security interests",
+    "Commercially driven solutions for stressed assets, exits and recovery",
+  ],
+  offerings: [
+    {
+      title: "Insolvency & Bankruptcy Code",
+      description:
+        "Advisory and legal support on matters arising under the Insolvency and Bankruptcy Code, 2016, including restructuring and insolvency processes.",
+      icon: "/icons/insolvency/ibc.svg",
+    },
+    {
+      title: "Corporate Restructuring",
+      description:
+        "Strategic advice and assistance in implementing restructuring through formal court or tribunal processes.",
+      icon: "/icons/insolvency/corporate-restructuring.svg",
+    },
+    {
+      title: "Insolvency Strategy",
+      description:
+        "Development of restructuring and insolvency strategies aligned with the prevailing legal, regulatory and policy framework.",
+      icon: "/icons/insolvency/insolvency-strategy.svg",
+    },
+    {
+      title: "Liquidation Advisory",
+      description:
+        "Guidance and representation throughout liquidation processes under the Companies Act, 2013 and the Insolvency and Bankruptcy Code, 2016.",
+      icon: "/icons/insolvency/liquidation-advisory.svg",
+    },
+    {
+      title: "Management Advisory",
+      description:
+        "Advice to key managerial personnel regarding their liabilities, obligations and responsibilities during restructuring and insolvency processes.",
+      icon: "/icons/insolvency/management-advisory.svg",
+    },
+    {
+      title: "Debt Recovery",
+      description:
+        "Legal support for lenders and creditors in pursuing available recovery mechanisms and protecting their financial interests.",
+      icon: "/icons/insolvency/debt-recovery.svg",
+    },
+    {
+      title: "Security Enforcement",
+      description:
+        "Advice and assistance in enforcing security interests under applicable laws, including the SARFAESI framework and other debt recovery mechanisms.",
+      icon: "/icons/insolvency/security-enforcement.svg",
+    },
+    {
+      title: "Stressed Asset Resolution",
+      description:
+        "Strategic guidance for investors and stakeholders dealing with stressed assets, restructuring opportunities and asset resolution.",
+      icon: "/icons/insolvency/stressed-asset-resolution.svg",
+    },
+    {
+      title: "Exit Strategy Advisory",
+      description:
+        "Assistance in structuring and implementing exit strategies through strategic sales, demergers, slump sales, auctions and other available mechanisms.",
+      icon: "/icons/insolvency/exit-strategy.svg",
+    },
+  ],
+  advisory: {
+    heading: "Strategic Insolvency & Restructuring Advisory",
+    body: "Financial distress requires timely decisions, clear legal strategies and a practical understanding of commercial realities. We works closely with creditors, lenders, shareholders, investors, directors and businesses to identify risks, evaluate available options and develop effective restructuring or recovery strategies. From insolvency proceedings and liquidation to debt recovery, security enforcement and stressed asset exits, we provide focused legal support at every stage of the process.",
+    points: [
+      "Strategic advice across restructuring and insolvency matters",
+      "Early risk assessment and stakeholder-focused solutions",
+      "Support for recovery, liquidation and security enforcement",
+      "Practical strategies for stressed assets and investor exits",
+    ],
+  },
+};
+
+export const commercialCorporate: ServiceDetailContent = {
+  eyebrow: "AREAS of Practice",
+  titleLead: "Commercial & Corporate Laws",
+  titleAccent: "Strategic Legal Solutions for Businesses",
+  hero: {
+    src: "/images/commercial-hero.png",
+    width: 2508,
+    height: 941,
+    alt: "A boardroom desk with a contract, a Commercial & Corporate Laws volume, laptop and scales",
+    className:
+      "absolute top-[-0.01%] left-[0.04%] h-[100.01%] w-[99.96%] max-w-none object-cover",
+    titleMaxWidth: "max-w-[530px]",
+  },
+  heroOverlay: "linear-gradient(to left, rgba(52,49,49,0) 0%, #1b1a1a 100%)",
+  overview: [
+    "Our Commercial & Corporate Laws practice provides comprehensive legal and strategic support to businesses operating and establishing themselves in India. We advise clients across corporate, commercial, regulatory, compliance and corporate governance matters, helping them navigate the legal framework surrounding their business activities.",
+    "From evaluating business opportunities and establishing appropriate corporate structures to managing transactions, regulatory requirements and day-to-day corporate matters, our team provides practical legal solutions tailored to each client's business objectives.",
+  ],
+  valuePoints: [
+    "Strategic legal guidance for establishing and operating businesses in India",
+    "Practical support across corporate, commercial and regulatory requirements",
+    "Comprehensive assistance with structuring, transactions and compliance",
+    "Business-focused legal solutions aligned with commercial objectives",
+  ],
+  offerings: [
+    {
+      title: "Business Structuring",
+      description:
+        "Strategic advice on evaluating business options and selecting the most suitable legal and corporate structure.",
+      icon: "/icons/commercial/business-structuring.svg",
+    },
+    {
+      title: "Company Incorporation",
+      description:
+        "Strategic advice on evaluating business options and selecting the most suitable legal and corporate structure.",
+      icon: "/icons/commercial/company-incorporation.svg",
+    },
+    {
+      title: "LLPs & Partnerships",
+      description:
+        "Advisory and support for establishing limited liability partnerships, partnerships and proprietorships.",
+      icon: "/icons/commercial/llps-partnerships.svg",
+    },
+    {
+      title: "Due Diligence",
+      description:
+        "Comprehensive legal due diligence to identify potential risks, obligations and opportunities in business transactions.",
+      icon: "/icons/commercial/due-diligence.svg",
+    },
+    {
+      title: "Subsidiaries & Joint Ventures",
+      description:
+        "Strategic support for establishing subsidiaries, joint ventures and other collaborative business structures.",
+      icon: "/icons/commercial/subsidiaries-joint-ventures.svg",
+    },
+    {
+      title: "Mergers & Acquisitions",
+      description:
+        "Legal advisory and transactional support for mergers, acquisitions and other corporate restructuring initiatives.",
+      icon: "/icons/commercial/mergers-acquisitions.svg",
+    },
+    {
+      title: "Corporate Governance",
+      description:
+        "Advice on corporate governance, regulatory obligations and compliance requirements for businesses and corporate entities.",
+      icon: "/icons/commercial/corporate-governance.svg",
+    },
+    {
+      title: "Regulatory Approvals",
+      description:
+        "Assistance in obtaining permissions, sanctions and approvals from relevant state and regulatory authorities.",
+      icon: "/icons/commercial/regulatory-approvals.svg",
+    },
+    {
+      title: "Commercial & Corporate Advisory",
+      description:
+        "Ongoing legal support for negotiations, transactions and day to day corporate and company law matters.",
+      icon: "/icons/commercial/commercial-corporate-advisory.svg",
+    },
+  ],
+  advisory: {
+    heading: "Corporate & Commercial Advisory Supporting Businesses at Every Stage",
+    body: "Building and operating a business involves navigating a complex range of corporate, commercial and regulatory considerations. Our team works closely with clients to provide clear legal guidance from the initial evaluation of business opportunities to incorporation, expansion, transactions and ongoing corporate compliance. Whether establishing a new entity, entering into a joint venture, undertaking an acquisition or managing day-to-day corporate matters, we provide practical and commercially focused legal support.",
+    points: [
+      "Strategic guidance for establishing and structuring businesses",
+      "Comprehensive support across corporate transactions and compliance",
+      "Assistance with regulatory approvals and legal due diligence",
+      "Practical, business-focused advice for long-term growth",
+    ],
+  },
+};
+
+export const draftingContracts: ServiceDetailContent = {
+  eyebrow: "AREAS of Practice",
+  titleLead: "Drafting & Negotiating Contracts",
+  titleAccent: "Clear Agreements. Stronger Protection.",
+  hero: {
+    src: "/images/drafting-hero.png",
+    width: 2508,
+    height: 941,
+    alt: "A desk nameplate reading Drafting & Negotiating Contracts beside law volumes and a signed contract",
+    className:
+      "absolute top-[-0.01%] left-[0.04%] h-[100.01%] w-[99.96%] max-w-none object-cover",
+    titleMaxWidth: "max-w-[530px]",
+  },
+  overview: [
+    "Our Drafting & Negotiating Contracts practice provides strategic legal assistance in negotiating, drafting and finalising agreements that protect our clients' interests while minimising the risk of future disputes and consequential litigation.",
+    "We believe that an effective contract begins with a clear understanding of the client's business, commercial objectives and practical requirements. Our team works closely with clients to develop well-structured agreements and negotiate terms that strike the right balance between business realities, commercial interests and legal protection.",
+  ],
+  valuePoints: [
+    "Client-focused contracts built around practical business requirements",
+    "Strategic negotiation to protect commercial and legal interests",
+    "Clear, balanced and commercially viable contractual terms",
+    "Proactive risk management to minimise future disputes and litigation",
+  ],
+  offerings: [
+    {
+      title: "Contract Drafting",
+      description:
+        "Drafting clear, comprehensive and legally robust agreements tailored to the specific requirements of each transaction and business relationship.",
+      icon: "/icons/drafting/contract-drafting.svg",
+    },
+    {
+      title: "Contract Negotiation",
+      description:
+        "Strategic assistance in negotiating contractual terms while protecting our clients' commercial interests and legal position.",
+      icon: "/icons/drafting/contract-negotiation.svg",
+    },
+    {
+      title: "Commercial Agreements",
+      description:
+        "Advisory and support for establishing limited liability partnerships, partnerships and proprietorships.",
+      icon: "/icons/drafting/commercial-agreements.svg",
+    },
+    {
+      title: "Business Contracts",
+      description:
+        "Preparation and finalisation of contracts aligned with the operational and commercial requirements of businesses.",
+      icon: "/icons/drafting/business-contracts.svg",
+    },
+    {
+      title: "Contract Review",
+      description:
+        "Detailed review and analysis of proposed agreements to identify potential risks, obligations and areas requiring negotiation.",
+      icon: "/icons/drafting/contract-review.svg",
+    },
+    {
+      title: "Risk Assessment",
+      description:
+        "Identifying contractual risks and developing appropriate provisions to minimise disputes and potential litigation",
+      icon: "/icons/drafting/risk-assessment.svg",
+    },
+    {
+      title: "Transaction Documentation",
+      description:
+        "Drafting and negotiating documentation required for commercial transactions and business arrangements.",
+      icon: "/icons/drafting/transaction-documentation.svg",
+    },
+    {
+      title: "Contract Finalization",
+      description:
+        "Assistance throughout the negotiation & finalisation process to ensure that agreements accurately reflect the agreed commercial understanding.",
+      icon: "/icons/drafting/contract-finalization.svg",
+    },
+    {
+      title: "Dispute Prevention",
+      description:
+        "Structuring contractual terms and obligations with a proactive focus on reducing ambiguity, disputes and consequential litigation.",
+      icon: "/icons/drafting/dispute-prevention.svg",
+    },
+  ],
+  advisory: {
+    heading: "Strategic Contract Advisory to Protect Your Interests Before Disputes Arise",
+    body: "Every business relationship and transaction comes with its own commercial realities and legal considerations.  From initial discussions and drafting to negotiation and finalisation, we work to ensure that every agreement supports the intended business relationship while providing appropriate legal protection.",
+    points: [
+      "Tailored agreements built around business and commercial objectives",
+      "Strategic negotiation to secure balanced and favourable terms",
+      "Clear identification and management of contractual risks",
+      "Practical legal solutions designed to minimise future disputes",
+    ],
+  },
+};
+
+export const disputeResolution: ServiceDetailContent = {
+  eyebrow: "AREAS of Practice",
+  titleLead: "Alternative Dispute Resolution",
+  titleAccent: "Efficient Solutions Beyond Traditional Litigation",
+  hero: {
+    src: "/images/adr-hero.png",
+    width: 2730,
+    height: 1024,
+    alt: "Two parties seated across a table behind an Alternative Dispute Resolution nameplate",
+    className: "absolute top-0 left-[0.02%] h-full w-[99.98%] max-w-none object-cover",
+    titleMaxWidth: "max-w-[555px]",
+  },
+  heroOverlay: "linear-gradient(to left, rgba(52,52,52,0) 1.992%, #161313 100%)",
+  overview: [
+    "Our Alternative Dispute Resolution practice focuses on facilitating the efficient and effective resolution of disputes while helping clients avoid the time, cost and complexity often associated with prolonged litigation.",
+    "We actively support the expeditious settlement of commercial and business disputes through appropriate alternative dispute resolution mechanisms. Our approach is focused on finding practical, commercially viable solutions that protect our clients' interests while preserving valuable business relationships wherever possible.",
+  ],
+  valuePoints: [
+    "Strategic approaches focused on the timely resolution of disputes",
+    "Practical and commercially viable alternatives to prolonged litigation",
+    "Focus on reducing costs, delays and business disruption",
+    "Solutions designed to protect interests and preserve business relationships",
+  ],
+  offerings: [
+    {
+      title: "Arbitration",
+      description:
+        "Strategic legal support in resolving commercial and contractual disputes through arbitration proceedings.",
+      icon: "/icons/adr/arbitration.svg",
+    },
+    {
+      title: "Mediation",
+      description:
+        "Assistance in facilitating negotiated settlements through structured and collaborative mediation processes.",
+      icon: "/icons/adr/mediation.svg",
+    },
+    {
+      title: "Conciliation",
+      description:
+        "Support in resolving disputes through conciliatory processes aimed at achieving mutually acceptable outcomes.",
+      icon: "/icons/adr/conciliation.svg",
+    },
+    {
+      title: "Commercial Dispute Resolution",
+      description:
+        "Practical strategies for resolving complex commercial and business disputes efficiently and effectively.",
+      icon: "/icons/adr/commercial-dispute-resolution.svg",
+    },
+    {
+      title: "Settlement Negotiations",
+      description:
+        "Strategic assistance in negotiating settlements that protect legal and commercial interests.",
+      icon: "/icons/adr/settlement-negotiations.svg",
+    },
+    {
+      title: "Pre-Litigation Advisory",
+      description:
+        "Early legal assessment and strategic guidance to explore suitable resolution mechanisms before initiating formal litigation.",
+      icon: "/icons/adr/pre-litigation-advisory.svg",
+    },
+    {
+      title: "Dispute Strategy",
+      description:
+        "Developing tailored dispute resolution strategies based on the nature of the dispute, commercial objectives and legal considerations.",
+      icon: "/icons/adr/dispute-strategy.svg",
+    },
+    {
+      title: "Contractual Dispute Resolution",
+      description:
+        "Assistance in addressing disputes arising from commercial agreements, contractual obligations and business relationships.",
+      icon: "/icons/adr/contractual-dispute-resolution.svg",
+    },
+    {
+      title: "Negotiated Settlements",
+      description:
+        "Representation and support throughout negotiations aimed at achieving timely and commercially practical settlements.",
+      icon: "/icons/adr/negotiated-settlements.svg",
+    },
+  ],
+  advisory: {
+    heading: "Strategic Dispute Resolution Advisory for Resolving Disputes & Business.",
+    body: "Prolonged disputes can affect business operations, relationships and long-term growth. From early-stage negotiations to arbitration, mediation and settlement discussions, we work towards solutions that minimise disruption and help clients move forward with greater certainty.",
+    points: [
+      "Strategic guidance across alternative dispute resolution mechanisms",
+      "Focus on timely and cost-effective resolution of disputes",
+      "Commercially practical approaches to complex business conflicts",
+      "Solutions designed to minimise disruption and preserve relationships",
     ],
   },
 };
