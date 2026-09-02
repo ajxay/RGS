@@ -39,11 +39,17 @@ export function TaxLitigation({ className = "pb-[138px]" }: { className?: string
             </Link>
           </div>
 
-          <ul className="grid flex-1 grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-[26px]">
+          <ul className="grid flex-1 auto-rows-fr grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-[26px]">
+            {/* 112px leaves exactly one 24px line under the icon, so any title
+                that wraps used to spill straight through the bottom border —
+                "Foreign Trade Policy" on phones, and five of the six tiles at
+                1024 where the 3-up grid is narrowest. Below 1440 the height is
+                a minimum and the grid row stretches its siblings to match; at
+                1440 the titles are nowrap and the tile is exactly 112px. */}
             {taxLawAreas.map((area) => (
               <li
                 key={area.title}
-                className="flex h-28 flex-col items-center gap-4 rounded-[8px] border border-black/[0.125] px-2 py-4"
+                className="flex min-h-28 flex-col items-center gap-4 rounded-[8px] border border-black/[0.125] px-2 py-4 fig:h-28"
               >
                 <span className="flex size-10 shrink-0 items-center justify-center rounded-[8px] bg-bg-1">
                   <Image
