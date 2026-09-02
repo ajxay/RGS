@@ -83,7 +83,7 @@ export const practiceAreas = [
     title: "End to End Litigation Support",
     description: "Trial preparation, appellate advocacy, and courtroom representation.",
     icon: "/icons/practice/litigation-support.svg",
-    href: "/services",
+    href: "/services/litigation-support",
   },
 ];
 
@@ -924,6 +924,98 @@ export const disputeResolution: ServiceDetailContent = {
       "Focus on timely and cost-effective resolution of disputes",
       "Commercially practical approaches to complex business conflicts",
       "Solutions designed to minimise disruption and preserve relationships",
+    ],
+  },
+};
+
+export const litigationSupport: ServiceDetailContent = {
+  eyebrow: "AREAS of Practice",
+  titleLead: "End to End Litigation Support",
+  titleAccent: "Strategic Representation Across  Every Stage of a Dispute",
+  hero: {
+    src: "/images/litigation-hero.png",
+    width: 2508,
+    height: 941,
+    alt: "A case file, gavel and scales on a desk with lawyers conferring in the background",
+    className:
+      "absolute top-[-0.01%] left-[0.04%] h-[100.01%] w-[99.96%] max-w-none object-cover",
+    titleMaxWidth: "max-w-[633px]",
+  },
+  heroOverlay: "linear-gradient(to left, rgba(71,69,69,0) 12.813%, #1d1c1c 100%)",
+  overview: [
+    "Our End-to-End Litigation Support practice provides comprehensive legal representation across a wide spectrum of civil, criminal, corporate and commercial disputes. From the initial assessment of a dispute to representation before courts, tribunals and other adjudicatory forums, we offer strategic support throughout every stage of the litigation process.",
+    "Our practice covers direct and indirect taxation disputes, corporate and commercial litigation, white-collar matters, tender disputes, insolvency, debt recovery, consumer protection and other complex legal matters. With an expansive network of professionals and a presence across India, we are equipped to provide coordinated litigation support to clients across jurisdictions.",
+  ],
+  valuePoints: [
+    "End-to-end legal support from dispute assessment to final resolution",
+    "Strategic representation across courts, tribunals and adjudicatory forums",
+    "Comprehensive expertise across civil, criminal, commercial and regulatory matters",
+    "Coordinated litigation support across jurisdictions through an extensive professional network",
+  ],
+  offerings: [
+    {
+      title: "Civil Litigation",
+      description:
+        "Comprehensive legal representation in civil disputes, from initial strategy and proceedings to final resolution.",
+      icon: "/icons/litigation/civil-litigation.svg",
+    },
+    {
+      title: "Criminal Litigation",
+      description:
+        "Strategic legal support and representation in criminal matters, including complex and sensitive proceedings.",
+      icon: "/icons/litigation/criminal-litigation.svg",
+    },
+    {
+      title: "Corporate & Commercial Litigation",
+      description:
+        "Representation in disputes arising from corporate transactions, relationships & business operations.",
+      icon: "/icons/litigation/corporate-commercial-litigation.svg",
+    },
+    {
+      title: "White-Collar Matters",
+      description:
+        "Legal assistance in matters involving complex financial, corporate and regulatory issues.",
+      icon: "/icons/litigation/white-collar-matters.svg",
+    },
+    {
+      title: "Tax Litigation",
+      description:
+        "Representation in disputes relating to direct and indirect taxation before appropriate authorities, tribunals and courts.",
+      icon: "/icons/litigation/tax-litigation.svg",
+    },
+    {
+      title: "Tender & Contract Disputes",
+      description:
+        "Strategic support in disputes arising from tenders, contracts, procurement processes and commercial obligations.",
+      icon: "/icons/litigation/tender-contract-disputes.svg",
+    },
+    {
+      title: "Insolvency & Debt Recovery",
+      description:
+        "Representation and legal assistance in insolvency proceedings, recovery actions and related disputes.",
+      icon: "/icons/litigation/insolvency-debt-recovery.svg",
+    },
+    {
+      title: "Consumer Protection",
+      description:
+        "Legal support and representation in consumer disputes and proceedings before the appropriate forums.",
+      icon: "/icons/litigation/consumer-protection.svg",
+    },
+    {
+      title: "Arbitration & ADR",
+      description:
+        "Representation in domestic & international arbitration & alternative dispute resolution proceedings, including  commercial disputes.",
+      icon: "/icons/litigation/arbitration-adr.svg",
+    },
+  ],
+  advisory: {
+    heading: "Strategic Litigation Support From First Assessment to Final Resolution",
+    body: "Every dispute requires a clear understanding. Our litigation team works closely with clients to develop effective strategies from the earliest stages of a dispute through to representation before the appropriate courts, tribunals and dispute resolution forums. We provide coordinated legal support across jurisdictions.",
+    points: [
+      "Comprehensive support across civil, criminal and commercial disputes",
+      "Strategic representation before courts, tribunals and other forums",
+      "Experience in domestic and international dispute resolution",
+      "Legal support across jurisdictions and throughout the dispute lifecycle",
     ],
   },
 };

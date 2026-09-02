@@ -3,13 +3,18 @@ import Link from "next/link";
 import { MailIcon, MapPinIcon, PhoneIcon } from "@/components/icons";
 import { footerColumns, legalLinks, socialLinks } from "@/lib/site-data";
 
-/** Figma 54:7973 — navy footer, hairline column rule at x=611, 1279px base rule. */
+/**
+ * Figma 54:7973 — navy footer, hairline column rule at x=611, 1279px base rule.
+ * The 531px brand column, 190px indent and 139px link gaps are artboard-exact
+ * and apply from 1440 up; below that the two halves share the row fluidly and
+ * the link columns wrap rather than run off the edge.
+ */
 export function SiteFooter() {
   return (
     <footer className="bg-primary">
       <div className="mx-auto w-full max-w-[1440px] px-5 pt-[49px] sm:px-8 lg:px-20">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-0">
-          <div className="lg:w-[531px] lg:shrink-0">
+          <div className="lg:min-w-0 lg:flex-1 fig:w-[531px] fig:flex-none">
             <Image
               src="/images/rgs-legal-logo-box.png"
               alt="RGS Legal"
@@ -70,7 +75,7 @@ export function SiteFooter() {
             className="hidden h-[191px] w-px shrink-0 bg-bg-1/50 lg:block"
           />
 
-          <div className="flex flex-wrap gap-x-16 gap-y-10 lg:flex-nowrap lg:gap-x-[139px] lg:pl-[190px]">
+          <div className="flex flex-wrap gap-x-16 gap-y-10 lg:min-w-0 lg:flex-1 lg:justify-between lg:gap-x-10 lg:pl-10 fig:flex-none fig:flex-nowrap fig:justify-start fig:gap-x-[139px] fig:pl-[190px]">
             {footerColumns.map((column) => (
               <div key={column.heading} className="flex flex-col gap-5">
                 <h2 className="font-title text-[14px] leading-5 text-bg-1">

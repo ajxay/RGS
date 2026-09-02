@@ -13,7 +13,7 @@ export function AboutStats() {
           {aboutStats.map((stat, index) => (
             <div
               key={stat.label}
-              className={`flex flex-col items-center rounded-[8px] bg-white px-8 pt-10 lg:h-[156px] ${
+              className={`flex flex-col items-center rounded-[8px] bg-white px-8 pt-10 lg:min-h-[156px] fig:h-[156px] ${
                 index < aboutStats.length - 1
                   ? "lg:border-r lg:border-black/[0.125]"
                   : ""

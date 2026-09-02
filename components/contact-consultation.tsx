@@ -15,14 +15,17 @@ const labelClass =
 
 /**
  * Figma 54:8435 + 54:8804 — a full-bleed navy band holding a 551px copy column
- * and a 551px translucent form panel, 96px apart.
+ * and a 551px translucent form panel, 96px apart. Both are pinned to 551px at
+ * the artboard width: an even `flex-1` split would not reproduce it, because a
+ * `flex-basis: 0` item still carries its own padding on top of its share, which
+ * pushed the padded form to 592px and squeezed the copy to 510px.
  */
 export function ContactConsultation() {
   return (
     <section id="consultation" className="bg-primary py-12">
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-20">
         <div className="mx-auto flex max-w-[1198px] flex-col gap-12 lg:flex-row lg:gap-24">
-          <div className="flex flex-col justify-center lg:w-[551px] lg:shrink-0">
+          <div className="flex flex-col justify-center lg:min-w-0 lg:flex-1 fig:w-[551px] fig:flex-none">
             <h2 className="font-title max-w-[412px] text-[28px] leading-[36px] text-white lg:text-[32px] lg:leading-10">
               Schedule a consultation
             </h2>
@@ -60,7 +63,7 @@ export function ContactConsultation() {
             </ul>
           </div>
 
-          <form className="rounded-[2px] border-[0.667px] border-white/10 bg-white/5 p-[40.667px] lg:w-[551px] lg:shrink-0">
+          <form className="rounded-[2px] border-[0.667px] border-white/10 bg-white/5 p-6 sm:p-[40.667px] lg:min-w-0 lg:flex-1 fig:w-[551px] fig:flex-none">
             <div className="flex flex-col gap-5 sm:flex-row sm:gap-5">
               <div className="flex flex-1 flex-col">
                 <label htmlFor="full-name" className={labelClass}>

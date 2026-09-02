@@ -19,11 +19,14 @@ export function CtaBanner({ className = "pb-[100px]" }: { className?: string }) 
           />
 
           <div className="relative px-6 py-10 sm:px-10 lg:px-16 lg:py-8">
-            <div className="flex max-w-[628px] flex-col gap-4">
+            {/* The heading measures 632px on one line at 32px Libre Baskerville,
+                so a 628px cap on this wrapper silently broke it over two lines.
+                Figma's 628px is the paragraph's wrap width; the heading is free. */}
+            <div className="flex flex-col gap-4">
               <h2 className="font-title text-[24px] leading-[32px] text-primary lg:text-[32px] lg:leading-10">
                 Ready to resolve your legal challenge?
               </h2>
-              <p className="text-[16px] leading-6 text-secondary">
+              <p className="max-w-[628px] text-[16px] leading-6 text-secondary">
                 Schedule a confidential consultation with one of our senior
                 attorneys. No obligation. Plain-language advice from day one.
               </p>

@@ -12,7 +12,7 @@ export function TaxLitigation({ className = "pb-[138px]" }: { className?: string
     <section className={className}>
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-20">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-12">
-          <div className="flex flex-col gap-4 lg:w-[600px] lg:shrink-0">
+          <div className="flex flex-col gap-4 lg:min-w-0 lg:flex-1 fig:w-[600px] fig:flex-none">
             <div className="flex flex-col gap-4">
               <h2 className="font-title text-[28px] leading-[36px] text-primary lg:text-[32px] lg:leading-10">
                 Clarity in tax, strength
@@ -54,7 +54,7 @@ export function TaxLitigation({ className = "pb-[138px]" }: { className?: string
                     className="size-8"
                   />
                 </span>
-                <h3 className="font-title text-center text-[16px] leading-6 text-primary lg:whitespace-nowrap">
+                <h3 className="font-title text-center text-[16px] leading-6 text-primary fig:whitespace-nowrap">
                   {area.title}
                 </h3>
               </li>

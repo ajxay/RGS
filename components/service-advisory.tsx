@@ -20,7 +20,7 @@ export function ServiceAdvisory({
     <section className={className}>
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-20">
         <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-stretch">
-          <div className="flex flex-col justify-center lg:h-[434px] lg:w-[619px] lg:shrink-0">
+          <div className="flex flex-col justify-center lg:min-h-[434px] lg:min-w-0 lg:flex-1 fig:h-[434px] fig:w-[619px] fig:flex-none">
             <h2
               className={`font-title ${headingWidth} pb-5 text-[28px] leading-[36px] text-ink lg:text-[32px] lg:leading-10`}
             >
@@ -48,7 +48,7 @@ export function ServiceAdvisory({
                       />
                     </span>
                   </span>
-                  <span className="text-[16px] leading-6 text-ink-soft lg:whitespace-nowrap">
+                  <span className="text-[16px] leading-6 text-ink-soft fig:whitespace-nowrap">
                     {point}
                   </span>
                 </li>
@@ -56,13 +56,13 @@ export function ServiceAdvisory({
             </ul>
           </div>
 
-          <div className="relative aspect-[621/434] w-full overflow-hidden rounded-[16px] lg:h-[434px] lg:w-[621px] lg:shrink-0">
+          <div className="relative aspect-[621/434] w-full overflow-hidden rounded-[16px] lg:h-auto lg:min-w-0 lg:flex-1 fig:h-[434px] fig:w-[621px] fig:flex-none">
             <Image
               src="/images/about-law-library.png"
               alt="Law library shelves behind a reading table"
               width={3000}
               height={2089}
-              sizes="(max-width: 1024px) 100vw, 621px"
+              sizes="(min-width: 1440px) 621px, (min-width: 1024px) 50vw, 100vw"
               className="absolute top-0 left-[-0.34%] h-full w-[100.36%] max-w-none object-cover"
             />
           </div>

@@ -11,9 +11,15 @@ export function ServiceOverview({
   detail,
   panelPadding = "py-[49px]",
   panelHeight = "",
+  columnHeight = "lg:min-h-[254px] fig:h-[254px]",
 }: {
   detail: ServiceDetailContent;
   panelPadding?: string;
+  /** Litigation Support runs 5+5 line paragraphs and fixes this column at
+      296px instead, matching its panel exactly. Pass both a `lg:min-h-*` (so
+      the column can still grow when narrower columns wrap the copy further)
+      and a `fig:h-*` (the exact artboard height at 1440). */
+  columnHeight?: string;
   /** Three of the four frames pin the panel to 296px and let the padding
       absorb however many value points the page carries. */
   panelHeight?: string;
@@ -21,10 +27,11 @@ export function ServiceOverview({
   return (
     <section className="py-[79px]">
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-20">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-0 lg:pl-[21px]">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-10 fig:gap-0 fig:pl-[21px]">
           {/* All five frames fix this column at 254px and top-align the copy, so
-              pages with shorter paragraphs keep the same optical centre. */}
-          <div className="lg:h-[254px] lg:w-[595px] lg:shrink-0">
+              pages with shorter paragraphs keep the same optical centre. Below
+              1440 the height is only a minimum — the copy rewraps and grows. */}
+          <div className={`${columnHeight} lg:min-w-0 lg:flex-1 fig:w-[595px] fig:flex-none`}>
             <h2 className="font-title text-[28px] leading-[36px] text-primary lg:text-[32px] lg:leading-10">
               Overview
             </h2>
@@ -37,7 +44,7 @@ export function ServiceOverview({
           </div>
 
           <div
-            className={`bg-bg-1 px-8 ${panelPadding} ${panelHeight} lg:w-[595px] lg:shrink-0`}
+            className={`bg-bg-1 px-8 ${panelPadding} ${panelHeight} lg:min-w-0 lg:flex-1 fig:w-[595px] fig:flex-none`}
           >
             <h3 className="font-title text-[20px] leading-7 font-bold text-primary">
               How We Add Value

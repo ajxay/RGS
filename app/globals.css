@@ -24,6 +24,18 @@
   --color-warm-muted: #7a6e60;
   --color-warm-panel: #f9f6f1;
 
+  /* The Figma artboard is 1440px wide, and every exact column measurement in
+     this design (595+595, 619+621, 562+638, …) assumes that width. Tailwind's
+     `lg` starts at 1024px, so those widths used to switch on ~400px too early
+     and overflowed the viewport on any ordinary laptop. `fig` pins the exact
+     artboard geometry to 1440px and up; between `lg` and `fig` the same
+     layouts run on fluid columns. Additive — sm/md/lg/xl/2xl are untouched. */
+  /* Declared in rem (90rem = 1440px) so Tailwind can sort it against the
+     built-in rem breakpoints. As `1440px` it sorted before sm/md/lg and the
+     `lg:` rules then won the cascade at 1440, silently undoing every exact
+     width. */
+  --breakpoint-fig: 90rem;
+
   --font-title: var(--font-libre-baskerville), Georgia, "Times New Roman", serif;
   --font-body: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
 

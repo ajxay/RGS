@@ -16,6 +16,7 @@ Next.js + Tailwind CSS implementation of the RGS Legal site from Figma
 | `/services/commercial-corporate` | [`213:384` Commercial & Corporate Laws](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=213-384) |
 | `/services/drafting-contracts` | [`213:702` Drafting & Negotiating Contracts](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=213-702) |
 | `/services/dispute-resolution` | [`213:1020` Alternative Dispute Resolution](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=213-1020) |
+| `/services/litigation-support` | [`213:1657` End to End Litigation Support](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=213-1657) |
 | `/contact` | [`54:8434` Contact Us](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=54-8434) |
 
 ## Running it
@@ -56,6 +57,42 @@ reference. They are deliberately **not** in `@theme`: Tailwind v4 treats the
 `--radius-*` and `--spacing-*` namespaces as its own scales, so registering them
 there silently rewrites every `p-*`, `gap-*` and `rounded-*` utility.
 
+## Responsive strategy
+
+The Figma artboard is 1440px wide, and the design's exact column measurements
+(595+595, 619+621, 608+621, 562+638, 551+551, the footer's 531px brand column
+and 190px indent) only add up at that width. Tailwind's `lg` starts at 1024px,
+so pinning those widths to `lg:` overflowed the viewport by up to 336px on any
+ordinary laptop.
+
+`globals.css` therefore registers one extra breakpoint:
+
+```css
+@theme { --breakpoint-fig: 90rem; }   /* 1440px */
+```
+
+- **`fig:` (≥1440)** carries the artboard-exact geometry — fixed column widths,
+  fixed section heights, the 21px Overview indent, the `whitespace-nowrap`
+  advisory lists.
+- **`lg:` (1024–1439)** runs the same two-column layouts on `flex-1` columns
+  with `min-w-0`, and treats the artboard heights as `min-h-*` so copy that
+  rewraps in a narrower column grows the box instead of spilling out of it.
+- **below `lg`** the columns stack, as they already did.
+
+Two things to keep in mind when editing:
+
+1. **Declare the breakpoint in `rem`, not `px`.** Tailwind sorts breakpoints by
+   value; as `1440px` it could not be ordered against the built-in `rem` scale
+   and was emitted *before* `sm`/`md`/`lg`, so the `lg:` rules won the cascade at
+   1440 and silently undid every exact width.
+2. **`flex-1` is not the same as an even split** when the items are padded. A
+   `flex-basis: 0` item still carries its own padding on top of its share, which
+   is why the consultation form and copy column are pinned with `fig:w-[551px]`
+   rather than left to divide the row.
+
+Verified with no horizontal overflow on all 14 routes from 320px to 2560px, and
+byte-identical rendering at 1440px against the pre-change build.
+
 ## Layout
 
 ```
@@ -72,6 +109,7 @@ app/
   services/commercial-corporate/page.tsx  Commercial & Corporate composition
   services/drafting-contracts/page.tsx    Drafting & Negotiating composition
   services/dispute-resolution/page.tsx    Alternative Dispute Resolution composition
+  services/litigation-support/page.tsx    End to End Litigation Support composition
   contact/page.tsx    Contact Us composition
   globals.css         tokens, base styles, rail + mask helpers
 components/

@@ -26,12 +26,12 @@ export default function SecuritiesLawPage() {
         <ServiceOverview
           detail={securitiesLaw}
           panelPadding="pt-8"
-          panelHeight="lg:h-[296px]"
+          panelHeight="lg:min-h-[296px] fig:h-[296px]"
         />
         <ServiceList
           detail={securitiesLaw}
           className="pb-[110px]"
-          cardClassName="rounded-[14px] lg:h-[250px]"
+          cardClassName="rounded-[14px] lg:min-h-[250px] fig:h-[250px]"
         />
         <ServiceAdvisory
           detail={securitiesLaw}

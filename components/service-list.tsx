@@ -11,7 +11,7 @@ import type { ServiceDetailContent } from "@/lib/site-data";
 export function ServiceList({
   detail,
   className = "pb-[82px]",
-  cardClassName = "justify-center lg:h-[248px]",
+  cardClassName = "justify-center lg:min-h-[248px] fig:h-[248px]",
 }: {
   detail: ServiceDetailContent;
   className?: string;
