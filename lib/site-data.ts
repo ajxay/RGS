@@ -999,6 +999,15 @@ export const disputeResolution: ServiceDetailContent = {
       "Commercially practical approaches to complex business conflicts",
       "Solutions designed to minimise disruption and preserve relationships",
     ],
+    /* Figma 213:1098 — the third distinct fill named "image 64" (1023x583,
+       its own photo). Centred cover, no transform. */
+    image: {
+      src: "/images/advisory-dispute-resolution.jpg",
+      alt: "Gavel resting beside brass scales and a closed law book",
+      width: 1023,
+      height: 583,
+      className: "absolute inset-0 h-full w-full max-w-none object-cover",
+    },
   },
 };
 
