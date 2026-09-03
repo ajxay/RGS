@@ -742,7 +742,7 @@ export const commercialCorporate: ServiceDetailContent = {
     {
       title: "Company Incorporation",
       description:
-        "Strategic advice on evaluating business options and selecting the most suitable legal and corporate structure.",
+        "Assistance with the incorporation and registration of companies and other business entities in India.",
       icon: "/icons/commercial/company-incorporation.svg",
     },
     {
