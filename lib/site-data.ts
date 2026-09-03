@@ -695,6 +695,16 @@ export const insolvencyLaw: ServiceDetailContent = {
       "Support for recovery, liquidation and security enforcement",
       "Practical strategies for stressed assets and investor exits",
     ],
+    /* Figma 270:11 "TIME8236.jpg 1" — same shoot as the Indirect Taxation
+       photo and the same 106.76% / -6.76% crop, but a different frame. */
+    image: {
+      src: "/images/advisory-insolvency-law.jpg",
+      alt: "Close-up of a hand signing a document with a pen",
+      width: 1600,
+      height: 1048,
+      className:
+        "absolute top-[-0.01%] left-[-6.76%] h-[100.03%] w-[106.76%] max-w-none object-cover",
+    },
   },
 };
 
@@ -787,6 +797,17 @@ export const commercialCorporate: ServiceDetailContent = {
       "Assistance with regulatory approvals and legal due diligence",
       "Practical, business-focused advice for long-term growth",
     ],
+    /* Figma 270:13 "TIME7678.jpg 1" — a portrait (2731x4096) source. The frame
+       blows it up to 214.61% height and lifts it 57.3%, taking a landscape
+       band from the upper-middle rather than cropping to fit. */
+    image: {
+      src: "/images/advisory-commercial-corporate.jpg",
+      alt: "Corridor of glass-partitioned offices beside a shelf of law books",
+      width: 1400,
+      height: 2100,
+      className:
+        "absolute top-[-57.3%] left-0 h-[214.61%] w-full max-w-none object-cover",
+    },
   },
 };
 
