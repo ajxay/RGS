@@ -495,6 +495,16 @@ export const directTaxation: ServiceDetailContent = {
       "Strong representation in assessments, appeals and tax litigation",
       "Practical, client-focused solutions with timely execution",
     ],
+    /* Figma 270:9 "TIME7735.jpg 1" — scaled to 104.83% and pulled left by
+       the same 4.83%, cropping flush to the box's right edge. */
+    image: {
+      src: "/images/advisory-direct-taxation.jpg",
+      alt: "Boardroom with a polished conference table and leather chairs",
+      width: 1600,
+      height: 1067,
+      className:
+        "absolute top-[-0.01%] left-[-4.83%] h-[100.01%] w-[104.83%] max-w-none object-cover",
+    },
   },
 };
 
