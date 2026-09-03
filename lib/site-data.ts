@@ -899,6 +899,15 @@ export const draftingContracts: ServiceDetailContent = {
       "Clear identification and management of contractual risks",
       "Practical legal solutions designed to minimise future disputes",
     ],
+    /* Figma 213:780 — layer-named "image 64" like the Securities Law fill, but
+       a different photo (740x518 vs 1024x683). Centred cover, no transform. */
+    image: {
+      src: "/images/advisory-drafting-contracts.jpg",
+      alt: "Gavel and brass scales in front of a stack of bound law books",
+      width: 740,
+      height: 518,
+      className: "absolute inset-0 h-full w-full max-w-none object-cover",
+    },
   },
 };
 
