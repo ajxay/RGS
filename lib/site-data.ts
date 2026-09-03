@@ -596,6 +596,15 @@ export const securitiesLaw: ServiceDetailContent = {
       "Strong representation before SEBI, SAT and the Supreme Court",
       "Practical, timely and commercially focused legal solutions",
     ],
+    /* Figma 205:600 "image 64" — unlike the taxation frames this fill has no
+       percentage transform, just a centred cover crop. */
+    image: {
+      src: "/images/advisory-securities-law.jpg",
+      alt: "Scales of justice and a gavel in front of a shelf of law books",
+      width: 1024,
+      height: 683,
+      className: "absolute inset-0 h-full w-full max-w-none object-cover",
+    },
   },
 };
 
