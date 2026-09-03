@@ -294,9 +294,9 @@ export type ServiceDetailContent = {
     body: string;
     points: string[];
     /** Each frame carries its own photo for this section, cropped by the
-        frame's own image transform. Omitted pages fall back to the shared
-        library shot until their Figma frame is picked up. */
-    image?: {
+        frame's own image transform — required, so a new detail page cannot
+        silently inherit another page's photo. */
+    image: {
       src: string;
       width: number;
       height: number;
@@ -1100,6 +1100,15 @@ export const litigationSupport: ServiceDetailContent = {
       "Experience in domestic and international dispute resolution",
       "Legal support across jurisdictions and throughout the dispute lifecycle",
     ],
+    /* Figma 213:1735 — the fourth and last fill named "image 64" (1010x504,
+       its own photo). Centred cover, no transform. */
+    image: {
+      src: "/images/advisory-litigation-support.jpg",
+      alt: "Gavel and brass scales resting on a stack of law books",
+      width: 1010,
+      height: 504,
+      className: "absolute inset-0 h-full w-full max-w-none object-cover",
+    },
   },
 };
 

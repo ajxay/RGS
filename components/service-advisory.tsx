@@ -5,16 +5,6 @@ import type { ServiceDetailContent } from "@/lib/site-data";
  * Figma 54:9069… (Indirect) and 202:233… (Direct) — the copy column sits flush
  * on the 80px page margin with no padded container, beside the library photo.
  */
-/** Pages whose Figma frame hasn't been picked up yet keep the library shot. */
-const fallbackImage = {
-  src: "/images/about-law-library.png",
-  alt: "Law library shelves behind a reading table",
-  width: 3000,
-  height: 2089,
-  className:
-    "absolute top-0 left-[-0.34%] h-full w-[100.36%] max-w-none object-cover",
-};
-
 export function ServiceAdvisory({
   detail,
   className = "pb-[96px]",
@@ -26,7 +16,7 @@ export function ServiceAdvisory({
   headingWidth?: string;
   bodyWidth?: string;
 }) {
-  const image = detail.advisory.image ?? fallbackImage;
+  const { image } = detail.advisory;
 
   return (
     <section className={className}>
