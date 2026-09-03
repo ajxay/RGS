@@ -850,7 +850,7 @@ export const draftingContracts: ServiceDetailContent = {
     {
       title: "Commercial Agreements",
       description:
-        "Advisory and support for establishing limited liability partnerships, partnerships and proprietorships.",
+        "Drafting and reviewing agreements governing commercial relationships, transactions and business arrangements.",
       icon: "/icons/drafting/commercial-agreements.svg",
     },
     {
