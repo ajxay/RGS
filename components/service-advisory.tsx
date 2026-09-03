@@ -5,6 +5,16 @@ import type { ServiceDetailContent } from "@/lib/site-data";
  * Figma 54:9069… (Indirect) and 202:233… (Direct) — the copy column sits flush
  * on the 80px page margin with no padded container, beside the library photo.
  */
+/** Pages whose Figma frame hasn't been picked up yet keep the library shot. */
+const fallbackImage = {
+  src: "/images/about-law-library.png",
+  alt: "Law library shelves behind a reading table",
+  width: 3000,
+  height: 2089,
+  className:
+    "absolute top-0 left-[-0.34%] h-full w-[100.36%] max-w-none object-cover",
+};
+
 export function ServiceAdvisory({
   detail,
   className = "pb-[96px]",
@@ -16,6 +26,8 @@ export function ServiceAdvisory({
   headingWidth?: string;
   bodyWidth?: string;
 }) {
+  const image = detail.advisory.image ?? fallbackImage;
+
   return (
     <section className={className}>
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-20">
@@ -58,12 +70,12 @@ export function ServiceAdvisory({
 
           <div className="relative aspect-[621/434] w-full overflow-hidden rounded-[16px] lg:h-auto lg:min-w-0 lg:flex-1 fig:h-[434px] fig:w-[621px] fig:flex-none">
             <Image
-              src="/images/about-law-library.png"
-              alt="Law library shelves behind a reading table"
-              width={3000}
-              height={2089}
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
               sizes="(min-width: 1440px) 621px, (min-width: 1024px) 50vw, 100vw"
-              className="absolute top-0 left-[-0.34%] h-full w-[100.36%] max-w-none object-cover"
+              className={image.className}
             />
           </div>
         </div>

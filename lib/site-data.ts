@@ -289,7 +289,21 @@ export type ServiceDetailContent = {
   overview: [string, string];
   valuePoints: string[];
   offerings: ServiceOffering[];
-  advisory: { heading: string; body: string; points: string[] };
+  advisory: {
+    heading: string;
+    body: string;
+    points: string[];
+    /** Each frame carries its own photo for this section, cropped by the
+        frame's own image transform. Omitted pages fall back to the shared
+        library shot until their Figma frame is picked up. */
+    image?: {
+      src: string;
+      width: number;
+      height: number;
+      alt: string;
+      className: string;
+    };
+  };
 };
 
 export const indirectTaxation: ServiceDetailContent = {
@@ -379,6 +393,17 @@ export const indirectTaxation: ServiceDetailContent = {
       "Strong representation in audits, investigations, and tax disputes",
       "Practical, business-oriented solutions with timely execution",
     ],
+    /* Figma 270:7 "TIME8232.jpg 1" — the frame scales the photo to 106.76%
+       and pulls it left by the same 6.76%, so the crop is flush to the box's
+       right edge rather than centred. */
+    image: {
+      src: "/images/advisory-indirect-taxation.jpg",
+      alt: "Hand signing a document with a fountain pen beside financial papers",
+      width: 1600,
+      height: 1048,
+      className:
+        "absolute top-[-0.01%] left-[-6.76%] h-[100.03%] w-[106.76%] max-w-none object-cover",
+    },
   },
 };
 
