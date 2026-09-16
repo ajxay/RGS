@@ -102,7 +102,7 @@ export function SiteHeader() {
             href="/contact"
             className="hidden shrink-0 rounded-[4px] bg-primary px-5 py-2 text-center text-[13px] leading-[19.5px] font-semibold text-bg-1 transition-colors hover:bg-secondary sm:block"
           >
-            Consult Now
+            Book Consultation
           </Link>
           <MobileNav />
         </div>

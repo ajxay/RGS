@@ -61,7 +61,7 @@ export function MobileNav() {
               onClick={() => setOpen(false)}
               className="mt-3 rounded-[4px] bg-primary px-5 py-2 text-center text-[13px] leading-[19.5px] font-semibold text-bg-1"
             >
-              Consult Now
+              Book Consultation
             </Link>
           </nav>
         </div>

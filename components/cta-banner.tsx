@@ -36,7 +36,7 @@ export function CtaBanner({ className = "pb-[100px]" }: { className?: string }) 
               href="/contact"
               className="mt-4 inline-flex items-center rounded-[4px] bg-primary px-5 py-2 text-center text-[13px] leading-[19.5px] font-semibold text-bg-1 transition-colors hover:bg-secondary"
             >
-              Consult Now
+              Book Consultation
             </Link>
           </div>
         </div>
