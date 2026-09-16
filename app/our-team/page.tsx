@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "The partners behind RGS Legal — deep technical expertise in indirect tax, compliance, dispute resolution and cross-border trade.",
 };
 
-export default function PartnersPage() {
+export default function OurTeamPage() {
   return (
     <>
       <SiteHeader />

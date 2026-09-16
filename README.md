@@ -7,7 +7,7 @@ Next.js + Tailwind CSS implementation of the RGS Legal site from Figma
 | --- | --- |
 | `/` | [`54:7485` Homepage](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=54-7485) |
 | `/about` | [`54:8048` About Us](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=54-8048) |
-| `/partners` | [`116:3573` Partners](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=116-3573) |
+| `/our-team` | [`116:3573` Partners](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=116-3573) |
 | `/services` | [`80:770` Our Services](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=80-770) |
 | `/services/indirect-taxation` | [`54:8875` Indirect Taxation](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=54-8875) |
 | `/services/direct-taxation` | [`202:157` Direct Taxation](https://www.figma.com/design/LHywHs6phjR0WUqcnj0ZWb/RGS-Legal?node-id=202-157) |
@@ -100,7 +100,7 @@ app/
   layout.tsx          fonts + metadata
   page.tsx            homepage composition
   about/page.tsx      About Us composition
-  partners/page.tsx   Partners composition
+  our-team/page.tsx   Team (partner profiles) composition
   services/page.tsx   Our Services composition
   services/indirect-taxation/page.tsx  Indirect Taxation composition
   services/direct-taxation/page.tsx    Direct Taxation composition

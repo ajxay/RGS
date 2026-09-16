@@ -4,6 +4,7 @@
 export const navLinks = [
   { label: "Practice Areas", href: "/services", hasMenu: true },
   { label: "About Us", href: "/about", hasMenu: false },
+  { label: "Team", href: "/our-team", hasMenu: false },
   { label: "Blogs & Articles", href: "/#insights", hasMenu: false },
   { label: "Contact Us", href: "/contact", hasMenu: false },
 ];
